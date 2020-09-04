@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - ObjectMapper (3.4.2)
+  - Result (4.1.0)
+  - SwiftAPI (1.6.2)
+
+DEPENDENCIES:
+  - Moya (= 12.0.1)
+  - ObjectMapper (= 3.4.2)
+  - SwiftAPI (= 1.6.2)
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SwiftAPI: ea2bd310f2444b4afa83250a17aaefa020bbc42c
+
+PODFILE CHECKSUM: 5e1df6ffcd568f8825bb978d6f086f7c1bb76bab
+
+COCOAPODS: 1.4.0
