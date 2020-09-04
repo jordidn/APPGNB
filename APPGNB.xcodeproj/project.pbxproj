@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		A76B326C2502AF1200DA51B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B326B2502AF1200DA51B7 /* AppDelegate.swift */; };
 		A76B326E2502AF1200DA51B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B326D2502AF1200DA51B7 /* SceneDelegate.swift */; };
-		A76B32702502AF1200DA51B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B326F2502AF1200DA51B7 /* ViewController.swift */; };
 		A76B32732502AF1200DA51B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76B32712502AF1200DA51B7 /* Main.storyboard */; };
 		A76B32752502AF1200DA51B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76B32742502AF1200DA51B7 /* Assets.xcassets */; };
 		A76B32782502AF1200DA51B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76B32762502AF1200DA51B7 /* LaunchScreen.storyboard */; };
 		A76B32802502B0F900DA51B7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A76B327F2502B0F900DA51B7 /* Podfile */; };
+		A76B32822502B43300DA51B7 /* APPGNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32812502B43300DA51B7 /* APPGNB.swift */; };
+		A76B32892502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76B32882502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard */; };
+		A76B328B2502B5DF00DA51B7 /* GNBProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B328A2502B5DF00DA51B7 /* GNBProductsListViewController.swift */; };
+		A76B32902502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76B328F2502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard */; };
+		A76B32922502B9CC00DA51B7 /* GNBProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32912502B9CC00DA51B7 /* GNBProductDetailViewController.swift */; };
+		A76B32962502BADF00DA51B7 /* GNBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32952502BADF00DA51B7 /* GNBExtensions.swift */; };
 		D7FB831F3FAFCE7BE32186B7 /* Pods_APPGNB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B022EA8639DBAD0CCCCB48BF /* Pods_APPGNB.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +27,17 @@
 		A76B32682502AF1200DA51B7 /* APPGNB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPGNB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76B326B2502AF1200DA51B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76B326D2502AF1200DA51B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A76B326F2502AF1200DA51B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A76B32722502AF1200DA51B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A76B32742502AF1200DA51B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76B32772502AF1200DA51B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A76B32792502AF1200DA51B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A76B327F2502B0F900DA51B7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A76B32812502B43300DA51B7 /* APPGNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPGNB.swift; sourceTree = "<group>"; };
+		A76B32882502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GNBProductsStoryboard.storyboard; sourceTree = "<group>"; };
+		A76B328A2502B5DF00DA51B7 /* GNBProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductsListViewController.swift; sourceTree = "<group>"; };
+		A76B328F2502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GMBProductDetailStoryboard.storyboard; sourceTree = "<group>"; };
+		A76B32912502B9CC00DA51B7 /* GNBProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductDetailViewController.swift; sourceTree = "<group>"; };
+		A76B32952502BADF00DA51B7 /* GNBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBExtensions.swift; sourceTree = "<group>"; };
 		B022EA8639DBAD0CCCCB48BF /* Pods_APPGNB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPGNB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C917A8944D0015F3FA2AF224 /* Pods-APPGNB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPGNB.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPGNB/Pods-APPGNB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,15 +93,100 @@
 		A76B326A2502AF1200DA51B7 /* APPGNB */ = {
 			isa = PBXGroup;
 			children = (
+				A76B32832502B4AB00DA51B7 /* Features */,
 				A76B326B2502AF1200DA51B7 /* AppDelegate.swift */,
 				A76B326D2502AF1200DA51B7 /* SceneDelegate.swift */,
-				A76B326F2502AF1200DA51B7 /* ViewController.swift */,
 				A76B32712502AF1200DA51B7 /* Main.storyboard */,
 				A76B32742502AF1200DA51B7 /* Assets.xcassets */,
 				A76B32762502AF1200DA51B7 /* LaunchScreen.storyboard */,
 				A76B32792502AF1200DA51B7 /* Info.plist */,
+				A76B32812502B43300DA51B7 /* APPGNB.swift */,
 			);
 			path = APPGNB;
+			sourceTree = "<group>";
+		};
+		A76B32832502B4AB00DA51B7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A76B328C2502B99100DA51B7 /* ProductDetail */,
+				A76B32842502B4D200DA51B7 /* Products */,
+				A76B32932502BAA600DA51B7 /* CrossFeatures */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A76B32842502B4D200DA51B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32862502B57F00DA51B7 /* ViewModels */,
+				A76B32852502B57500DA51B7 /* Controllers */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		A76B32852502B57500DA51B7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32872502B58C00DA51B7 /* Views */,
+				A76B328A2502B5DF00DA51B7 /* GNBProductsListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A76B32862502B57F00DA51B7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A76B32872502B58C00DA51B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32882502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A76B328C2502B99100DA51B7 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A76B328D2502B99D00DA51B7 /* Controllers */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		A76B328D2502B99D00DA51B7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A76B328E2502B9A400DA51B7 /* Views */,
+				A76B32912502B9CC00DA51B7 /* GNBProductDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A76B328E2502B9A400DA51B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A76B328F2502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A76B32932502BAA600DA51B7 /* CrossFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32942502BAC300DA51B7 /* Utils */,
+			);
+			path = CrossFeatures;
+			sourceTree = "<group>";
+		};
+		A76B32942502BAC300DA51B7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32952502BADF00DA51B7 /* GNBExtensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +218,7 @@
 		A76B32602502AF1200DA51B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GNB;
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Jordi Duran";
@@ -159,6 +255,8 @@
 				A76B32752502AF1200DA51B7 /* Assets.xcassets in Resources */,
 				A76B32802502B0F900DA51B7 /* Podfile in Resources */,
 				A76B32732502AF1200DA51B7 /* Main.storyboard in Resources */,
+				A76B32892502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard in Resources */,
+				A76B32902502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,9 +341,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76B32702502AF1200DA51B7 /* ViewController.swift in Sources */,
+				A76B328B2502B5DF00DA51B7 /* GNBProductsListViewController.swift in Sources */,
 				A76B326C2502AF1200DA51B7 /* AppDelegate.swift in Sources */,
 				A76B326E2502AF1200DA51B7 /* SceneDelegate.swift in Sources */,
+				A76B32962502BADF00DA51B7 /* GNBExtensions.swift in Sources */,
+				A76B32922502B9CC00DA51B7 /* GNBProductDetailViewController.swift in Sources */,
+				A76B32822502B43300DA51B7 /* APPGNB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
