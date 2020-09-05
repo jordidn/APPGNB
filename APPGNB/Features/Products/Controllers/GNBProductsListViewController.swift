@@ -8,37 +8,113 @@
 
 import UIKit
 
-class GNBProductsListViewController: UIViewController {
+class GNBProductsListViewController: GNBBaseViewController {
 
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func buttonPressed(_ sender: Any) {
-        guard let viewController = GNBProductDetailViewController.storyboardInstance() else { return }
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
+    
+    // MARK: - Properties
+    
+    fileprivate let viewModel = GNBProductsListViewModel()
+    fileprivate var cellsVM = [GNBBaseTableViewCellViewModel]()
     
     
     // MARK: - Live cicle method's
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        configureUI()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Configure and register tableView cells
+        registerTableViewCells()
+        GNBBaseTableViewCellViewModel.configureTable(tableView, bounces: true)
         
+        // Recover cells
+        self.cellsVM = viewModel.getCellsVM()
         
+        // Fetch data
+        fetchData()
+            
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
-    // TODO: - Pasar al Base
-    func configureUI() {
+    override func configureUI() {
         self.title = "Products List"
     }
+    
+    override func fetchData() {
+        self.reloadTableView()
+        viewModel.fetchProductsList(success: { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.reloadTableView()
+            
+        }, error: { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.reloadTableView(withError: true)
+        })
+    }
+    
+    
+    // MARK: - Config Methods
+    
+    func registerTableViewCells() {
+        tableView.gnbRegisterCell(nibName: .productListItemCell)
+        tableView.gnbRegisterCell(nibName: .loadingCell)
+        tableView.gnbRegisterCell(nibName: .errorCell)
+    }
+    
+    
+    func reloadTableView(withError error: Bool = false) {
+        self.cellsVM = self.viewModel.getCellsVM(withError: error)
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
 
+}
+
+
+// MARK: - TableView extension
+
+extension GNBProductsListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.cellsVM.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return GNBBaseTableViewCellViewModel.tableViewCell(forRowAtIndexPath: indexPath, tableView, cellsVM: cellsVM, delegate: self)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return GNBBaseTableViewCellViewModel.getCellHeight(cellsVM: cellsVM, index: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cellVM = GNBBaseTableViewCellViewModel.getCellVM(atIndex: indexPath.row, forCellsVM: cellsVM) else { return }
+        switch cellVM.cellType {
+        case .productListItemCell:
+            // TODO: - pasar modelo de datos
+//            guard let gameModel = cellVM.cellActionIdentifier as? SRGameModel else { return }
+            guard let viewController = GNBProductDetailViewController.storyboardInstance() else { return }
+            self.navigationController?.pushViewController(viewController, animated: true)
+            
+        default:
+            break
+        }
+    }
+
+}
+
+
+
+extension GNBProductsListViewController: GNBErrorTableViewCellProtocol {
+    
+    func errorButtonPressed(cellActionIdentifier: Any?) {
+        viewModel.resetData()
+        fetchData()
+    }
+    
 }

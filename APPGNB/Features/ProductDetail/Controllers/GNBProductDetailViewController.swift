@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GNBProductDetailViewController: UIViewController {
+class GNBProductDetailViewController: GNBBaseViewController {
 
     // MARK: - Storyboard Instance
     

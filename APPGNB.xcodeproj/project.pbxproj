@@ -19,6 +19,18 @@
 		A76B32902502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76B328F2502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard */; };
 		A76B32922502B9CC00DA51B7 /* GNBProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32912502B9CC00DA51B7 /* GNBProductDetailViewController.swift */; };
 		A76B32962502BADF00DA51B7 /* GNBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32952502BADF00DA51B7 /* GNBExtensions.swift */; };
+		A76B32992502BDA200DA51B7 /* GNBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32982502BDA200DA51B7 /* GNBBaseViewController.swift */; };
+		A76B329B2502BF4400DA51B7 /* GNBProductsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B329A2502BF4400DA51B7 /* GNBProductsListViewModel.swift */; };
+		A76B32A02502BFAD00DA51B7 /* GNBBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B329F2502BFAD00DA51B7 /* GNBBaseTableViewCell.swift */; };
+		A76B32A32502C04000DA51B7 /* GNBBaseTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32A22502C04000DA51B7 /* GNBBaseTableViewCellType.swift */; };
+		A76B32A52502C08500DA51B7 /* GNBBaseTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32A42502C08500DA51B7 /* GNBBaseTableViewCellViewModel.swift */; };
+		A76B32A72502C39200DA51B7 /* GNBProductsListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32A62502C39200DA51B7 /* GNBProductsListManager.swift */; };
+		A76B32AB2502C40D00DA51B7 /* GNBErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32A92502C40D00DA51B7 /* GNBErrorTableViewCell.swift */; };
+		A76B32AC2502C40D00DA51B7 /* GNBErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76B32AA2502C40D00DA51B7 /* GNBErrorTableViewCell.xib */; };
+		A76B32AF2502C56100DA51B7 /* GNBLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32AD2502C56100DA51B7 /* GNBLoadingTableViewCell.swift */; };
+		A76B32B02502C56100DA51B7 /* GNBLoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76B32AE2502C56100DA51B7 /* GNBLoadingTableViewCell.xib */; };
+		A76B32B32502C65E00DA51B7 /* GNBProductListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B32B12502C65E00DA51B7 /* GNBProductListItemTableViewCell.swift */; };
+		A76B32B42502C65E00DA51B7 /* GNBProductListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76B32B22502C65E00DA51B7 /* GNBProductListItemTableViewCell.xib */; };
 		D7FB831F3FAFCE7BE32186B7 /* Pods_APPGNB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B022EA8639DBAD0CCCCB48BF /* Pods_APPGNB.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +50,18 @@
 		A76B328F2502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GMBProductDetailStoryboard.storyboard; sourceTree = "<group>"; };
 		A76B32912502B9CC00DA51B7 /* GNBProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductDetailViewController.swift; sourceTree = "<group>"; };
 		A76B32952502BADF00DA51B7 /* GNBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBExtensions.swift; sourceTree = "<group>"; };
+		A76B32982502BDA200DA51B7 /* GNBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBBaseViewController.swift; sourceTree = "<group>"; };
+		A76B329A2502BF4400DA51B7 /* GNBProductsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductsListViewModel.swift; sourceTree = "<group>"; };
+		A76B329F2502BFAD00DA51B7 /* GNBBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBBaseTableViewCell.swift; sourceTree = "<group>"; };
+		A76B32A22502C04000DA51B7 /* GNBBaseTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBBaseTableViewCellType.swift; sourceTree = "<group>"; };
+		A76B32A42502C08500DA51B7 /* GNBBaseTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBBaseTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		A76B32A62502C39200DA51B7 /* GNBProductsListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductsListManager.swift; sourceTree = "<group>"; };
+		A76B32A92502C40D00DA51B7 /* GNBErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBErrorTableViewCell.swift; sourceTree = "<group>"; };
+		A76B32AA2502C40D00DA51B7 /* GNBErrorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GNBErrorTableViewCell.xib; sourceTree = "<group>"; };
+		A76B32AD2502C56100DA51B7 /* GNBLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBLoadingTableViewCell.swift; sourceTree = "<group>"; };
+		A76B32AE2502C56100DA51B7 /* GNBLoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GNBLoadingTableViewCell.xib; sourceTree = "<group>"; };
+		A76B32B12502C65E00DA51B7 /* GNBProductListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductListItemTableViewCell.swift; sourceTree = "<group>"; };
+		A76B32B22502C65E00DA51B7 /* GNBProductListItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GNBProductListItemTableViewCell.xib; sourceTree = "<group>"; };
 		B022EA8639DBAD0CCCCB48BF /* Pods_APPGNB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPGNB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C917A8944D0015F3FA2AF224 /* Pods-APPGNB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPGNB.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPGNB/Pods-APPGNB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +135,7 @@
 				A76B328C2502B99100DA51B7 /* ProductDetail */,
 				A76B32842502B4D200DA51B7 /* Products */,
 				A76B32932502BAA600DA51B7 /* CrossFeatures */,
+				A76B329C2502BF7200DA51B7 /* CommonsUI */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -136,6 +161,8 @@
 		A76B32862502B57F00DA51B7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A76B32A62502C39200DA51B7 /* GNBProductsListManager.swift */,
+				A76B329A2502BF4400DA51B7 /* GNBProductsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -144,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				A76B32882502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard */,
+				A76B32B52502C6DD00DA51B7 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +204,7 @@
 		A76B32932502BAA600DA51B7 /* CrossFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				A76B32972502BD9200DA51B7 /* Controllers */,
 				A76B32942502BAC300DA51B7 /* Utils */,
 			);
 			path = CrossFeatures;
@@ -187,6 +216,61 @@
 				A76B32952502BADF00DA51B7 /* GNBExtensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A76B32972502BD9200DA51B7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32982502BDA200DA51B7 /* GNBBaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A76B329C2502BF7200DA51B7 /* CommonsUI */ = {
+			isa = PBXGroup;
+			children = (
+				A76B329D2502BF8500DA51B7 /* ViewModels */,
+				A76B329E2502BF8B00DA51B7 /* Controllers */,
+			);
+			path = CommonsUI;
+			sourceTree = "<group>";
+		};
+		A76B329D2502BF8500DA51B7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32A22502C04000DA51B7 /* GNBBaseTableViewCellType.swift */,
+				A76B32A42502C08500DA51B7 /* GNBBaseTableViewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A76B329E2502BF8B00DA51B7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32A82502C3F300DA51B7 /* TableViewCells */,
+				A76B329F2502BFAD00DA51B7 /* GNBBaseTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A76B32A82502C3F300DA51B7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32A92502C40D00DA51B7 /* GNBErrorTableViewCell.swift */,
+				A76B32AA2502C40D00DA51B7 /* GNBErrorTableViewCell.xib */,
+				A76B32AD2502C56100DA51B7 /* GNBLoadingTableViewCell.swift */,
+				A76B32AE2502C56100DA51B7 /* GNBLoadingTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		A76B32B52502C6DD00DA51B7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A76B32B12502C65E00DA51B7 /* GNBProductListItemTableViewCell.swift */,
+				A76B32B22502C65E00DA51B7 /* GNBProductListItemTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +337,10 @@
 			files = (
 				A76B32782502AF1200DA51B7 /* LaunchScreen.storyboard in Resources */,
 				A76B32752502AF1200DA51B7 /* Assets.xcassets in Resources */,
+				A76B32AC2502C40D00DA51B7 /* GNBErrorTableViewCell.xib in Resources */,
 				A76B32802502B0F900DA51B7 /* Podfile in Resources */,
+				A76B32B02502C56100DA51B7 /* GNBLoadingTableViewCell.xib in Resources */,
+				A76B32B42502C65E00DA51B7 /* GNBProductListItemTableViewCell.xib in Resources */,
 				A76B32732502AF1200DA51B7 /* Main.storyboard in Resources */,
 				A76B32892502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard in Resources */,
 				A76B32902502B9BA00DA51B7 /* GMBProductDetailStoryboard.storyboard in Resources */,
@@ -343,8 +430,17 @@
 			files = (
 				A76B328B2502B5DF00DA51B7 /* GNBProductsListViewController.swift in Sources */,
 				A76B326C2502AF1200DA51B7 /* AppDelegate.swift in Sources */,
+				A76B32992502BDA200DA51B7 /* GNBBaseViewController.swift in Sources */,
+				A76B32A52502C08500DA51B7 /* GNBBaseTableViewCellViewModel.swift in Sources */,
 				A76B326E2502AF1200DA51B7 /* SceneDelegate.swift in Sources */,
+				A76B32A32502C04000DA51B7 /* GNBBaseTableViewCellType.swift in Sources */,
+				A76B32AF2502C56100DA51B7 /* GNBLoadingTableViewCell.swift in Sources */,
+				A76B32A02502BFAD00DA51B7 /* GNBBaseTableViewCell.swift in Sources */,
+				A76B32B32502C65E00DA51B7 /* GNBProductListItemTableViewCell.swift in Sources */,
+				A76B32AB2502C40D00DA51B7 /* GNBErrorTableViewCell.swift in Sources */,
+				A76B329B2502BF4400DA51B7 /* GNBProductsListViewModel.swift in Sources */,
 				A76B32962502BADF00DA51B7 /* GNBExtensions.swift in Sources */,
+				A76B32A72502C39200DA51B7 /* GNBProductsListManager.swift in Sources */,
 				A76B32922502B9CC00DA51B7 /* GNBProductDetailViewController.swift in Sources */,
 				A76B32822502B43300DA51B7 /* APPGNB.swift in Sources */,
 			);
