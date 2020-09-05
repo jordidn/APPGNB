@@ -25,13 +25,13 @@ class GNBProductsListViewModel: NSObject {
         var cellsVM = [GNBBaseTableViewCellViewModel]()
         
         guard !error else { return [GNBErrorCellViewModel(titleText: "An error has occurred", buttonText: "Try again")] }
-        guard let gamesList = manager.productsList else { return [GNBLoadingCellViewModel()] }
-        for game in gamesList {
-//            guard let internationalName = game.getGameName(), let asset = game.assets?.coverTiny else { continue }
-//            cellsVM.append(SRGameListCellViewModel(titleText: internationalName, imagePathURL: URL(string: asset.uri ?? ""), imageWith: asset.width, imageHeight: asset.height, cellActionIdentifier: game))
+        
+        let productsNameList = manager.getProducts()
+        guard !productsNameList.isEmpty else { return [GNBLoadingCellViewModel()] }
+        for productName in productsNameList {
+            cellsVM.append(GNBProductListItemCellViewModel(titleText: productName, cellActionIdentifier: manager.getTransactions(forProduct: productName)))
         }
         
-        cellsVM.append(GNBErrorCellViewModel(titleText: "An error has occurred", buttonText: "Try again"))
         return cellsVM
     }
 
@@ -39,7 +39,7 @@ class GNBProductsListViewModel: NSObject {
     // MARK: - Fetch Request
     
     func fetchProductsList(success succeed: @escaping (() -> Void), error: @escaping (() -> Void)) {
-        manager.fetchProductsList(success: succeed, error: error)
+        manager.fetchProductsList(success: succeed, errorFailure: error)
     }
     
     
