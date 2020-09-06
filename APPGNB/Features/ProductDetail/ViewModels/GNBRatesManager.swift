@@ -45,22 +45,24 @@ class GNBRatesManager: NSObject {
     
     private func currencyExchange(originalCurrency: String, targetCurrency: String, originalAmount: Double) -> Double {
         guard originalCurrency != currentCurrency else { return originalAmount }
+        self.revisedCurrency.removeAll()
         
         // Consulted currency exchange previously
         if let rate = self.currencyExchangeCache[originalCurrency] {
             return originalAmount * rate
             
-        } else {
-            let rate = getRate(originalCurrency: originalCurrency, targetCurrency: targetCurrency, defaultRate: defaultRate)
+        } else if let rate = getRate(originalCurrency: originalCurrency, targetCurrency: targetCurrency, defaultRate: defaultRate) {
             
             // Save currency exchange for future requests
             self.currencyExchangeCache[originalCurrency] = rate
             
             return originalAmount * rate
         }
+        
+        return originalAmount
     }
     
-    private func getRate(originalCurrency: String, targetCurrency: String, defaultRate: Double) -> Double {
+    private func getRate(originalCurrency: String, targetCurrency: String, defaultRate: Double) -> Double? {
         // Direct conversion
         if let rate = getRateBetween(originalCurrency: originalCurrency, targetCurrency: targetCurrency) {
             return rate * defaultRate
@@ -73,8 +75,7 @@ class GNBRatesManager: NSObject {
                 
                 if originalCurrency == fromRate, !revisedCurrency.contains(toRate) {
                     if let rateDouble = Double(rateValue) {
-                        let rate = getRate(originalCurrency: toRate, targetCurrency: targetCurrency, defaultRate: defaultRate * rateDouble)
-                        if rate != 0 {
+                        if let rate = getRate(originalCurrency: toRate, targetCurrency: targetCurrency, defaultRate: defaultRate * rateDouble) {
                             return rate
                         }
                     }
@@ -82,7 +83,7 @@ class GNBRatesManager: NSObject {
             }
         }
         
-        return 0
+        return nil
     }
     
     private func getRateBetween(originalCurrency: String, targetCurrency: String) -> Double? {
