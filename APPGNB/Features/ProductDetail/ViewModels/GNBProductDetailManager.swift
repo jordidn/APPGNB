@@ -40,6 +40,12 @@ class GNBProductDetailManager: NSObject {
             case .success(let response):
                 do {
                     weakSelf.ratesRestModelList = try response.map(Array<GNBRateModel>.self)
+                    if let ratesRestModelList = weakSelf.ratesRestModelList {
+                        for rate in ratesRestModelList {
+                            print("from:\(rate.from ?? "") - to:\(rate.to ?? "") - rate: \(rate.rate ?? "")")
+                        }
+                    }
+                    
                     succeed()
                 } catch {
                     errorFailure()

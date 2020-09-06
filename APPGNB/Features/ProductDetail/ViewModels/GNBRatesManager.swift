@@ -67,22 +67,13 @@ class GNBRatesManager: NSObject {
             
         // Search another conversion
         } else {
-//            for rateModel in ratesRestModelList {
-//                guard let originRate = rateModel.from, let targetRate = rateModel.to else { continue }
-//                
-//                if originalCurrency == originRate,
-//            }
-//            
-//            
-//            
-//            
-//            
-//            
             revisedCurrency.insert(originalCurrency)
             for rateModel in ratesRestModelList {
-                if let rateTarget = rateModel.to, originalCurrency == rateModel.from, !revisedCurrency.contains(rateTarget) {
-                    if let rateOriginal = rateModel.to, let rateValue = rateModel.rate, let rateDouble = Double(rateValue) {
-                        let rate = getRate(originalCurrency: rateOriginal, targetCurrency: targetCurrency, defaultRate: defaultRate * rateDouble)
+                guard let fromRate = rateModel.from, let toRate = rateModel.to, let rateValue = rateModel.rate else { continue }
+                
+                if originalCurrency == fromRate, !revisedCurrency.contains(toRate) {
+                    if let rateDouble = Double(rateValue) {
+                        let rate = getRate(originalCurrency: toRate, targetCurrency: targetCurrency, defaultRate: defaultRate * rateDouble)
                         if rate != 0 {
                             return rate
                         }
@@ -96,12 +87,11 @@ class GNBRatesManager: NSObject {
     
     private func getRateBetween(originalCurrency: String, targetCurrency: String) -> Double? {
         for rateModel in ratesRestModelList {
-            if originalCurrency == rateModel.from, targetCurrency == rateModel.to, let rate = rateModel.rate {
+            if originalCurrency == rateModel.from && targetCurrency == rateModel.to, let rate = rateModel.rate {
                 return Double(rate)
             }
         }
         return nil
     }
-    
     
 }

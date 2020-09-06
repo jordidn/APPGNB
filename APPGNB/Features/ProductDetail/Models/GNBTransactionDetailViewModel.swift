@@ -23,4 +23,15 @@ class GNBTransactionDetailViewModel: NSObject {
         super.init()
     }
     
+    
+    // MARK: - Public functions
+    
+    func getCurrencyConversionText(targetCurrency: String) -> String {
+        guard let transactionAmount = transactionModel.amount,
+            let currency = transactionModel.currency else { return "" }
+        
+        return "\(transactionAmount) \(currency) -> \(targetCurrency)"
+    }
+    
+    
 }
