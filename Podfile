@@ -8,9 +8,6 @@ target 'APPGNB' do
   use_frameworks!
 
   # Pods for APPGNB
-  pod 'ObjectMapper', '3.4.2'
-  pod 'SwiftAPI', '1.6.2'
-  
   pod 'Moya', '12.0.1'
 
   # Pods for APPGNB
