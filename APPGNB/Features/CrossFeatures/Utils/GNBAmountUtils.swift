@@ -10,10 +10,24 @@ import UIKit
 
 class GNBAmountUtils: NSObject {
 
-    static func formatAmount(amount: Double, currency: String, decimalNumbers: Int) -> String {
-        let symbol = getCurrencySymbol(currency: currency)
+    static func formatAmount(amount: Double,
+                             currency: String? = nil,
+                             numberOfDecimals: Int) -> String {
         
-        return "\(amount) \(symbol)"
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = numberOfDecimals
+        formatter.minimumFractionDigits = numberOfDecimals
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        
+        var ammountFormatted = formatter.string(from: amount as NSNumber) ?? ""
+        
+        if let currency = currency {
+            let symbol = getCurrencySymbol(currency: currency)
+            ammountFormatted = "\(ammountFormatted) \(symbol)"
+        }
+        
+        return ammountFormatted
     }
     
     static func getCurrencySymbol(currency: String) -> String {
@@ -22,6 +36,14 @@ class GNBAmountUtils: NSObject {
             return "€"
         case "USD":
             return "$"
+        case "GBP":
+            return "£"
+        case "JPY":
+            return "¥"
+        case "TRY":
+            return "₺"
+        case "HKD":
+            return "HK$"
         default:
             return currency
         }

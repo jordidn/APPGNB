@@ -16,7 +16,7 @@ class GNBProductDetailViewModel: NSObject {
     fileprivate var ratesManager: GNBRatesManager?
     
     fileprivate let currentCurrency: String = "EUR"
-    fileprivate let decimalNumbers: Int = 2
+    fileprivate let numberOfDecimals: Int = 2
     fileprivate var transactionVMList: [GNBTransactionDetailViewModel] = []
     
     
@@ -43,13 +43,17 @@ class GNBProductDetailViewModel: NSObject {
         guard !error else { return [GNBErrorCellViewModel(titleText: "An error has occurred", buttonText: "Try again")] }
         
         // Check if the download was done
-        guard let ratesManager = self.ratesManager else { return [GNBLoadingCellViewModel()] }
+        guard self.ratesManager != nil else { return [GNBLoadingCellViewModel()] }
         
         for transactionVM in transactionVMList {
+            let formattedAmount = GNBAmountUtils.formatAmount(amount: transactionVM.currentCurrencyAmount,
+                                                              currency: currentCurrency,
+                                                              numberOfDecimals: numberOfDecimals)
+            
             cellsVM.append(GNBProductDetailItemCellViewModel(titleText: transactionVM.transactionModel.sku,
-                                                             subtitleText: "\(transactionVM.transactionModel.amount ?? "") \(transactionVM.transactionModel.currency ?? "")",
-                amountText: GNBAmountUtils.formatAmount(amount: transactionVM.currentCurrencyAmount, currency: currentCurrency, decimalNumbers: decimalNumbers),
-                cellActionIdentifier: transactionVM))
+                                                             subtitleText: transactionVM.getCurrencyConversionText(numberOfDecimals: numberOfDecimals),
+                                                             amountText: formattedAmount,
+                                                             cellActionIdentifier: transactionVM))
         }
         
         return cellsVM
@@ -67,7 +71,9 @@ class GNBProductDetailViewModel: NSObject {
         for transactionVM in transactionVMList {
             totalAmount += transactionVM.currentCurrencyAmount
         }
-        return GNBAmountUtils.formatAmount(amount: totalAmount, currency: currentCurrency, decimalNumbers: decimalNumbers)
+        return GNBAmountUtils.formatAmount(amount: totalAmount,
+                                           currency: currentCurrency,
+                                           numberOfDecimals: numberOfDecimals)
     }
     
     

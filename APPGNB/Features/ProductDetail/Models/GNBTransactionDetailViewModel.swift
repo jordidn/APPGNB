@@ -26,11 +26,15 @@ class GNBTransactionDetailViewModel: NSObject {
     
     // MARK: - Public functions
     
-    func getCurrencyConversionText(targetCurrency: String) -> String {
+    func getCurrencyConversionText(numberOfDecimals: Int) -> String {
         guard let transactionAmount = transactionModel.amount,
+            let doubleTransactionAmount = Double(transactionAmount),
             let currency = transactionModel.currency else { return "" }
         
-        return "\(transactionAmount) \(currency) -> \(targetCurrency)"
+        let formattedAmount = GNBAmountUtils.formatAmount(amount: doubleTransactionAmount,
+                                                          numberOfDecimals: numberOfDecimals)
+        
+        return "\(formattedAmount) \(currency)"
     }
     
     

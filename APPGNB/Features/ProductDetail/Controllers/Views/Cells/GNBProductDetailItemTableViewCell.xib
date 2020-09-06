@@ -38,7 +38,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM2-kD-AwU">
                         <rect key="frame" x="375" y="89" width="100" height="20.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="ZE2-gy-nJ0"/>
+                            <constraint firstAttribute="width" priority="750" constant="100" id="ZE2-gy-nJ0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
