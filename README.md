@@ -6,6 +6,8 @@ To obtain the data, a third-party library (Moya) has been used to retrieve the d
 
 Two screens have been created, one with the grouping of the products by sku, when clicking on a product, all the product's transactions will be displayed along with the currency conversion for each transaction, in addition, the total sum of the transactions will be displayed in the selected currency. (in this case EUR, according to the initial definition, although it is prepared for any currency).
 
+For each of the screens an error control has been carried out in case any of the two requests failed, showing an informative message and the option to retry the request.
+
 _We have chosen to request the currencies each time we enter the product detail to see different possible scenarios with currencies._
 
 
