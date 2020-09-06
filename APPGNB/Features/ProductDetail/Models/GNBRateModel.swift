@@ -1,5 +1,5 @@
 //
-//  GNBProductsList.swift
+//  GNBRateModel.swift
 //  APPGNB
 //
 //  Created by Jordi Durán on 05/09/2020.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class GNBProductItem: Codable {
+class GNBRateModel: Codable {
 
-    var sku: String?
-    var amount: String?
-    var currency: String?
+    var from: String?
+    var to: String?
+    var rate: String?
     
 }

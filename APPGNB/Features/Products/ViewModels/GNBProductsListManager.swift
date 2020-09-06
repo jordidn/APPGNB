@@ -26,9 +26,6 @@ class GNBProductsListManager: NSObject {
         self.productsListDictionary.removeAll()
     }
     
-    
-    // MARK: - Config Methods
-    
     func getProducts() -> [String] {
         return productsListDictionary.map({ $0.key })
     }
@@ -41,7 +38,7 @@ class GNBProductsListManager: NSObject {
     // MARK: - Fetch Request
     
     func fetchProductsList(success succeed: @escaping (() -> Void), errorFailure: @escaping (() -> Void)) {
-        provider.request(.productsList) { [weak self] (result) in
+        provider.request(.transactions) { [weak self] (result) in
             guard let weakSelf = self else { return }
 
             switch result {

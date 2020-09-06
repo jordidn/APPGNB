@@ -13,6 +13,7 @@ class GNBProductListItemTableViewCell: GNBBaseTableViewCell {
     // MARK: - IBOutlets
     
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblSubtitle: UILabel!
     @IBOutlet weak var separatorView: UIView!
     
     
@@ -23,6 +24,7 @@ class GNBProductListItemTableViewCell: GNBBaseTableViewCell {
         guard let cellVM = cellVM as? GNBProductListItemCellViewModel else { return }
         
         self.lblTitle.text = cellVM.titleText
+        self.lblSubtitle.text = cellVM.subtitleText
         self.separatorView.isHidden = !cellVM.showSeparator
         
         self.accessoryType = .disclosureIndicator
@@ -36,11 +38,15 @@ class GNBProductListItemTableViewCell: GNBBaseTableViewCell {
 
 class GNBProductListItemCellViewModel: GNBBaseTableViewCellViewModel {
     
-    init(titleText: String?, showSeparator: Bool = true, cellActionIdentifier: Any? = nil) {
+    var subtitleText: String?
+    
+    init(titleText: String?, subtitleText: String?, showSeparator: Bool = true, cellActionIdentifier: Any? = nil) {
         super.init(cellType: .productListItemCell)
         self.titleText = titleText
         self.showSeparator = showSeparator
         self.cellActionIdentifier = cellActionIdentifier
+        
+        self.subtitleText = subtitleText
     }
     
 }

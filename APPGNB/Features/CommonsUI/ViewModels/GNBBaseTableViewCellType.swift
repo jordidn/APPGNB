@@ -25,7 +25,7 @@ enum GNBBaseTableViewCellType: String {
         case .errorCell, .titleDescriptionCell:
             return UITableView.automaticDimension
         case .productListItemCell:
-            return 60
+            return 80
         case .loadingCell:
             return 90
         }

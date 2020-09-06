@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		A75BCF3E25037A4E007D1F73 /* GNBProductsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF3D25037A4E007D1F73 /* GNBProductsListDataSource.swift */; };
 		A75BCF4125037E1F007D1F73 /* GNBProductsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF4025037E1F007D1F73 /* GNBProductsList.swift */; };
+		A75BCF442503E69E007D1F73 /* GNBProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF432503E69E007D1F73 /* GNBProductDetailViewModel.swift */; };
+		A75BCF462503E6BC007D1F73 /* GNBProductDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF452503E6BC007D1F73 /* GNBProductDetailManager.swift */; };
+		A75BCF492503E9D4007D1F73 /* GNBProductDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF482503E9D4007D1F73 /* GNBProductDetailDataSource.swift */; };
+		A75BCF4C2503ED9B007D1F73 /* GNBRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF4B2503ED9B007D1F73 /* GNBRateModel.swift */; };
+		A75BCF502503EFF9007D1F73 /* GNBRatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF4F2503EFF9007D1F73 /* GNBRatesManager.swift */; };
+		A75BCF532503F2DA007D1F73 /* GNBSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF522503F2DA007D1F73 /* GNBSummaryView.swift */; };
+		A75BCF552503F2E4007D1F73 /* GNBSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75BCF542503F2E4007D1F73 /* GNBSummaryView.xib */; };
+		A75BCF572503F327007D1F73 /* GNBBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF562503F327007D1F73 /* GNBBaseView.swift */; };
+		A75BCF5D2503F9A2007D1F73 /* GNBTransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BCF5C2503F9A2007D1F73 /* GNBTransactionDetailViewModel.swift */; };
 		A76B326C2502AF1200DA51B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B326B2502AF1200DA51B7 /* AppDelegate.swift */; };
 		A76B326E2502AF1200DA51B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B326D2502AF1200DA51B7 /* SceneDelegate.swift */; };
 		A76B32732502AF1200DA51B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76B32712502AF1200DA51B7 /* Main.storyboard */; };
@@ -40,6 +49,15 @@
 		94A5D3D1EC92720712B62F4A /* Pods-APPGNB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPGNB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPGNB/Pods-APPGNB.debug.xcconfig"; sourceTree = "<group>"; };
 		A75BCF3D25037A4E007D1F73 /* GNBProductsListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductsListDataSource.swift; sourceTree = "<group>"; };
 		A75BCF4025037E1F007D1F73 /* GNBProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductsList.swift; sourceTree = "<group>"; };
+		A75BCF432503E69E007D1F73 /* GNBProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductDetailViewModel.swift; sourceTree = "<group>"; };
+		A75BCF452503E6BC007D1F73 /* GNBProductDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductDetailManager.swift; sourceTree = "<group>"; };
+		A75BCF482503E9D4007D1F73 /* GNBProductDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProductDetailDataSource.swift; sourceTree = "<group>"; };
+		A75BCF4B2503ED9B007D1F73 /* GNBRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBRateModel.swift; sourceTree = "<group>"; };
+		A75BCF4F2503EFF9007D1F73 /* GNBRatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBRatesManager.swift; sourceTree = "<group>"; };
+		A75BCF522503F2DA007D1F73 /* GNBSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBSummaryView.swift; sourceTree = "<group>"; };
+		A75BCF542503F2E4007D1F73 /* GNBSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GNBSummaryView.xib; sourceTree = "<group>"; };
+		A75BCF562503F327007D1F73 /* GNBBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBBaseView.swift; sourceTree = "<group>"; };
+		A75BCF5C2503F9A2007D1F73 /* GNBTransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBTransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		A76B32682502AF1200DA51B7 /* APPGNB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPGNB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76B326B2502AF1200DA51B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76B326D2502AF1200DA51B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +131,42 @@
 				A75BCF4025037E1F007D1F73 /* GNBProductsList.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A75BCF422503E688007D1F73 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A75BCF4F2503EFF9007D1F73 /* GNBRatesManager.swift */,
+				A75BCF452503E6BC007D1F73 /* GNBProductDetailManager.swift */,
+				A75BCF432503E69E007D1F73 /* GNBProductDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A75BCF472503E9B6007D1F73 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A75BCF482503E9D4007D1F73 /* GNBProductDetailDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A75BCF4A2503ED81007D1F73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A75BCF4B2503ED9B007D1F73 /* GNBRateModel.swift */,
+				A75BCF5C2503F9A2007D1F73 /* GNBTransactionDetailViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A75BCF512503F261007D1F73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A75BCF522503F2DA007D1F73 /* GNBSummaryView.swift */,
+				A75BCF542503F2E4007D1F73 /* GNBSummaryView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A76B325F2502AF1200DA51B7 = {
@@ -201,6 +255,9 @@
 		A76B328C2502B99100DA51B7 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A75BCF4A2503ED81007D1F73 /* Models */,
+				A75BCF472503E9B6007D1F73 /* DataSource */,
+				A75BCF422503E688007D1F73 /* ViewModels */,
 				A76B328D2502B99D00DA51B7 /* Controllers */,
 			);
 			path = ProductDetail;
@@ -269,8 +326,10 @@
 		A76B329E2502BF8B00DA51B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A75BCF512503F261007D1F73 /* Views */,
 				A76B32A82502C3F300DA51B7 /* TableViewCells */,
 				A76B329F2502BFAD00DA51B7 /* GNBBaseTableViewCell.swift */,
+				A75BCF562503F327007D1F73 /* GNBBaseView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -362,6 +421,7 @@
 				A76B32AC2502C40D00DA51B7 /* GNBErrorTableViewCell.xib in Resources */,
 				A76B32802502B0F900DA51B7 /* Podfile in Resources */,
 				A76B32B02502C56100DA51B7 /* GNBLoadingTableViewCell.xib in Resources */,
+				A75BCF552503F2E4007D1F73 /* GNBSummaryView.xib in Resources */,
 				A76B32B42502C65E00DA51B7 /* GNBProductListItemTableViewCell.xib in Resources */,
 				A76B32732502AF1200DA51B7 /* Main.storyboard in Resources */,
 				A76B32892502B5BC00DA51B7 /* GNBProductsStoryboard.storyboard in Resources */,
@@ -456,15 +516,23 @@
 				A76B32A52502C08500DA51B7 /* GNBBaseTableViewCellViewModel.swift in Sources */,
 				A76B326E2502AF1200DA51B7 /* SceneDelegate.swift in Sources */,
 				A76B32A32502C04000DA51B7 /* GNBBaseTableViewCellType.swift in Sources */,
+				A75BCF4C2503ED9B007D1F73 /* GNBRateModel.swift in Sources */,
+				A75BCF502503EFF9007D1F73 /* GNBRatesManager.swift in Sources */,
+				A75BCF492503E9D4007D1F73 /* GNBProductDetailDataSource.swift in Sources */,
+				A75BCF572503F327007D1F73 /* GNBBaseView.swift in Sources */,
 				A76B32AF2502C56100DA51B7 /* GNBLoadingTableViewCell.swift in Sources */,
+				A75BCF5D2503F9A2007D1F73 /* GNBTransactionDetailViewModel.swift in Sources */,
 				A76B32A02502BFAD00DA51B7 /* GNBBaseTableViewCell.swift in Sources */,
 				A76B32B32502C65E00DA51B7 /* GNBProductListItemTableViewCell.swift in Sources */,
+				A75BCF462503E6BC007D1F73 /* GNBProductDetailManager.swift in Sources */,
 				A76B32AB2502C40D00DA51B7 /* GNBErrorTableViewCell.swift in Sources */,
 				A76B329B2502BF4400DA51B7 /* GNBProductsListViewModel.swift in Sources */,
 				A76B32962502BADF00DA51B7 /* GNBExtensions.swift in Sources */,
 				A75BCF3E25037A4E007D1F73 /* GNBProductsListDataSource.swift in Sources */,
+				A75BCF442503E69E007D1F73 /* GNBProductDetailViewModel.swift in Sources */,
 				A75BCF4125037E1F007D1F73 /* GNBProductsList.swift in Sources */,
 				A76B32A72502C39200DA51B7 /* GNBProductsListManager.swift in Sources */,
+				A75BCF532503F2DA007D1F73 /* GNBSummaryView.swift in Sources */,
 				A76B32922502B9CC00DA51B7 /* GNBProductDetailViewController.swift in Sources */,
 				A76B32822502B43300DA51B7 /* APPGNB.swift in Sources */,
 			);

@@ -15,20 +15,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBn-X7-2kO">
-                                <rect key="frame" x="152.5" y="442.5" width="109" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q13-Ya-gOl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nGL-w3-qDD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nq7-Mp-5cb" customClass="GNBSummaryView" customModule="APPGNB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="768" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="50" id="ccz-p5-dEp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="iBn-X7-2kO" firstAttribute="centerY" secondItem="LE4-4N-kN7" secondAttribute="centerY" id="oFU-qE-O3p"/>
-                            <constraint firstItem="iBn-X7-2kO" firstAttribute="centerX" secondItem="LE4-4N-kN7" secondAttribute="centerX" id="pCh-yp-cid"/>
+                            <constraint firstItem="q13-Ya-gOl" firstAttribute="bottom" secondItem="LE4-4N-kN7" secondAttribute="bottom" id="6rD-fb-8ki"/>
+                            <constraint firstItem="q13-Ya-gOl" firstAttribute="leading" secondItem="LE4-4N-kN7" secondAttribute="leading" id="Mt1-PI-dNa"/>
+                            <constraint firstItem="q13-Ya-gOl" firstAttribute="top" secondItem="LE4-4N-kN7" secondAttribute="top" id="WGT-jj-YJZ"/>
+                            <constraint firstItem="q13-Ya-gOl" firstAttribute="trailing" secondItem="LE4-4N-kN7" secondAttribute="trailing" id="t8O-Sz-Y2g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LE4-4N-kN7"/>
                     </view>
+                    <connections>
+                        <outlet property="summaryContainerView" destination="Nq7-Mp-5cb" id="eVU-l3-N5x"/>
+                        <outlet property="tableView" destination="nGL-w3-qDD" id="1bc-Zv-4HN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a01-6U-lMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

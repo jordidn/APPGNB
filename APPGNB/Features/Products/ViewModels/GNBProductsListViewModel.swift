@@ -24,12 +24,19 @@ class GNBProductsListViewModel: NSObject {
     func getCellsVM(withError error: Bool = false) -> [GNBBaseTableViewCellViewModel] {
         var cellsVM = [GNBBaseTableViewCellViewModel]()
         
+        // Show the error if we get it from the request
         guard !error else { return [GNBErrorCellViewModel(titleText: "An error has occurred", buttonText: "Try again")] }
         
+        // Check if the download was done
         let productsNameList = manager.getProducts()
         guard !productsNameList.isEmpty else { return [GNBLoadingCellViewModel()] }
+        
+        // Generate products Cells
         for productName in productsNameList {
-            cellsVM.append(GNBProductListItemCellViewModel(titleText: productName, cellActionIdentifier: manager.getTransactions(forProduct: productName)))
+            let transactionsList = manager.getTransactions(forProduct: productName)
+            cellsVM.append(GNBProductListItemCellViewModel(titleText: productName,
+                                                           subtitleText: "\(transactionsList?.count ?? 0) transactions",
+                                                           cellActionIdentifier: transactionsList))
         }
         
         return cellsVM
@@ -41,7 +48,5 @@ class GNBProductsListViewModel: NSObject {
     func fetchProductsList(success succeed: @escaping (() -> Void), error: @escaping (() -> Void)) {
         manager.fetchProductsList(success: succeed, errorFailure: error)
     }
-    
-    
     
 }

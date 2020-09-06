@@ -65,7 +65,6 @@ class GNBProductsListViewController: GNBBaseViewController {
         tableView.gnbRegisterCell(nibName: .errorCell)
     }
     
-    
     func reloadTableView(withError error: Bool = false) {
         self.cellsVM = self.viewModel.getCellsVM(withError: error)
         DispatchQueue.main.async { [weak self] in
@@ -96,9 +95,8 @@ extension GNBProductsListViewController: UITableViewDelegate, UITableViewDataSou
         guard let cellVM = GNBBaseTableViewCellViewModel.getCellVM(atIndex: indexPath.row, forCellsVM: cellsVM) else { return }
         switch cellVM.cellType {
         case .productListItemCell:
-            // TODO: - pasar modelo de datos
-//            guard let gameModel = cellVM.cellActionIdentifier as? SRGameModel else { return }
-            guard let viewController = GNBProductDetailViewController.storyboardInstance() else { return }
+            guard let transactionsList = cellVM.cellActionIdentifier as? [GNBProductItem] else { return }
+            guard let viewController = GNBProductDetailViewController.storyboardInstance(transactionsList: transactionsList) else { return }
             self.navigationController?.pushViewController(viewController, animated: true)
             
         default:

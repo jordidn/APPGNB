@@ -1,0 +1,107 @@
+//
+//  GNBRatesManager.swift
+//  APPGNB
+//
+//  Created by Jordi Durán on 05/09/2020.
+//  Copyright © 2020 Jordi Duran. All rights reserved.
+//
+
+import UIKit
+
+class GNBRatesManager: NSObject {
+
+    // MARK: - Properties
+    
+    fileprivate var ratesRestModelList: [GNBRateModel]
+    fileprivate let currentCurrency: String
+    fileprivate let defaultRate: Double = 1
+    
+    fileprivate var currencyExchangeCache: Dictionary<String, Double> = [:]
+    
+    
+    init(ratesRestModelList: [GNBRateModel], currentCurrency: String) {
+        self.ratesRestModelList = ratesRestModelList
+        self.currentCurrency = currentCurrency
+        super.init()
+    }
+    
+    
+    // MARK: - Config Methods
+    
+    func calculateCurrentCurrency(forTransaction transactionModel: GNBProductItem) -> Double? {
+        guard let transactionCurrency = transactionModel.currency,
+            let originalAmountString = transactionModel.amount,
+            let originalAmount = Double(originalAmountString) else { return nil }
+        
+        return currencyExchange(originalCurrency: transactionCurrency,
+                                targetCurrency: currentCurrency,
+                                originalAmount: originalAmount)
+    }
+    
+    
+    /// Temporary variable to search for currency exchange
+    private var revisedCurrency: Set<String> = Set<String>()
+    
+    
+    private func currencyExchange(originalCurrency: String, targetCurrency: String, originalAmount: Double) -> Double {
+        guard originalCurrency != currentCurrency else { return originalAmount }
+        
+        // Consulted currency exchange previously
+        if let rate = self.currencyExchangeCache[originalCurrency] {
+            return originalAmount * rate
+            
+        } else {
+            let rate = getRate(originalCurrency: originalCurrency, targetCurrency: targetCurrency, defaultRate: defaultRate)
+            
+            // Save currency exchange for future requests
+            self.currencyExchangeCache[originalCurrency] = rate
+            
+            return originalAmount * rate
+        }
+    }
+    
+    private func getRate(originalCurrency: String, targetCurrency: String, defaultRate: Double) -> Double {
+        // Direct conversion
+        if let rate = getRateBetween(originalCurrency: originalCurrency, targetCurrency: targetCurrency) {
+            return rate * defaultRate
+            
+        // Search another conversion
+        } else {
+//            for rateModel in ratesRestModelList {
+//                guard let originRate = rateModel.from, let targetRate = rateModel.to else { continue }
+//                
+//                if originalCurrency == originRate,
+//            }
+//            
+//            
+//            
+//            
+//            
+//            
+            revisedCurrency.insert(originalCurrency)
+            for rateModel in ratesRestModelList {
+                if let rateTarget = rateModel.to, originalCurrency == rateModel.from, !revisedCurrency.contains(rateTarget) {
+                    if let rateOriginal = rateModel.to, let rateValue = rateModel.rate, let rateDouble = Double(rateValue) {
+                        let rate = getRate(originalCurrency: rateOriginal, targetCurrency: targetCurrency, defaultRate: defaultRate * rateDouble)
+                        if rate != 0 {
+                            return rate
+                        }
+                    }
+                }
+            }
+        }
+        
+        return 0
+    }
+    
+    private func getRateBetween(originalCurrency: String, targetCurrency: String) -> Double? {
+        for rateModel in ratesRestModelList {
+            if originalCurrency == rateModel.from, targetCurrency == rateModel.to, let rate = rateModel.rate {
+                return Double(rate)
+            }
+        }
+        return nil
+    }
+    
+    
+}

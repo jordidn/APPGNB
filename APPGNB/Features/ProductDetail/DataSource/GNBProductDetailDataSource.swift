@@ -1,5 +1,5 @@
 //
-//  GNBProductsListDataSource.swift
+//  GNBProductDetailDataSource.swift
 //  APPGNB
 //
 //  Created by Jordi Durán on 05/09/2020.
@@ -8,12 +8,12 @@
 
 import Moya
 
-enum GNBProductsListDataSource {
-    case transactions
+enum GNBProductDetailDataSource {
+    case rates
 }
 
 
-extension GNBProductsListDataSource: TargetType {
+extension GNBProductDetailDataSource: TargetType {
     
     var baseURL: URL {
         return URL(string: "https://quiet-stone-2094.herokuapp.com")!
@@ -21,14 +21,14 @@ extension GNBProductsListDataSource: TargetType {
     
     var path: String {
         switch self {
-        case .transactions:
-            return "/transactions.json"
+        case .rates:
+            return "/rates.json"
         }
     }
     
     var method: Method {
         switch self {
-        case .transactions:
+        case .rates:
             return .get
         }
     }
@@ -39,7 +39,7 @@ extension GNBProductsListDataSource: TargetType {
     
     var task: Task {
         switch self {
-        case .transactions:
+        case .rates:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
         }
     }
