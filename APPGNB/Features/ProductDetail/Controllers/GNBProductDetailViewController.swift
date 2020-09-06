@@ -71,7 +71,7 @@ class GNBProductDetailViewController: GNBBaseViewController {
     // MARK: - Config Methods
     
     func registerTableViewCells() {
-        tableView.gnbRegisterCell(nibName: .productListItemCell)
+        tableView.gnbRegisterCell(nibName: .productDetailItem)
         tableView.gnbRegisterCell(nibName: .loadingCell)
         tableView.gnbRegisterCell(nibName: .errorCell)
     }

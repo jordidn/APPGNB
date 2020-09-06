@@ -73,6 +73,12 @@ extension GNBBaseTableViewCellViewModel {
                 return cell
             }
             
+        case .productDetailItem:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.cellType.getNibName(), for: indexPath) as? GNBProductDetailItemTableViewCell {
+                cell.configure(cellVM: cellVM)
+                return cell
+            }
+            
         case .loadingCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.cellType.getNibName(), for: indexPath) as? GNBLoadingTableViewCell {
                 cell.configure(cellVM: cellVM)
@@ -84,13 +90,6 @@ extension GNBBaseTableViewCellViewModel {
                 cell.configure(cellVM: cellVM, delegate: delegate as? GNBErrorTableViewCellProtocol)
                 return cell
             }
-        
-        case .titleDescriptionCell:
-//            if let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.cellType.getNibName(), for: indexPath) as? SRTitleSubtitleTableViewCell {
-//                cell.configure(cellVM: cellVM)
-//                return cell
-//            }
-            break
         }
 
         return UITableViewCell()

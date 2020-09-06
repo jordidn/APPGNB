@@ -16,6 +16,7 @@ class GNBProductDetailViewModel: NSObject {
     fileprivate var ratesManager: GNBRatesManager?
     
     fileprivate let currentCurrency: String = "EUR"
+    fileprivate let decimalNumbers: Int = 2
     fileprivate var transactionVMList: [GNBTransactionDetailViewModel] = []
     
     
@@ -42,13 +43,13 @@ class GNBProductDetailViewModel: NSObject {
         guard !error else { return [GNBErrorCellViewModel(titleText: "An error has occurred", buttonText: "Try again")] }
         
         // Check if the download was done
-        let transactionsList = manager.transactionsList
         guard let ratesManager = self.ratesManager else { return [GNBLoadingCellViewModel()] }
         
-        for transactionModel in transactionsList {
-            cellsVM.append(GNBProductListItemCellViewModel(titleText: transactionModel.sku,
-                                                           subtitleText: "\(transactionModel.amount ?? "") \(transactionModel.currency ?? "")",
-                                                           cellActionIdentifier: transactionsList))
+        for transactionVM in transactionVMList {
+            cellsVM.append(GNBProductDetailItemCellViewModel(titleText: transactionVM.transactionModel.sku,
+                                                             subtitleText: "\(transactionVM.transactionModel.amount ?? "") \(transactionVM.transactionModel.currency ?? "")",
+                amountText: GNBAmountUtils.formatAmount(amount: transactionVM.currentCurrencyAmount, currency: currentCurrency, decimalNumbers: decimalNumbers),
+                cellActionIdentifier: transactionVM))
         }
         
         return cellsVM
@@ -62,7 +63,11 @@ class GNBProductDetailViewModel: NSObject {
     }
     
     func getTotalAmountFormatted() -> String {
-        return "30.00€"
+        var totalAmount: Double = 0.0
+        for transactionVM in transactionVMList {
+            totalAmount += transactionVM.currentCurrencyAmount
+        }
+        return GNBAmountUtils.formatAmount(amount: totalAmount, currency: currentCurrency, decimalNumbers: decimalNumbers)
     }
     
     
