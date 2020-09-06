@@ -10,6 +10,4 @@ target 'APPGNB' do
   # Pods for APPGNB
   pod 'Moya', '12.0.1'
 
-  # Pods for APPGNB
-
 end
